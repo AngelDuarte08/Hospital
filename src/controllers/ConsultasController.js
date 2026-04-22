@@ -30,7 +30,7 @@
 ⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
 */
 
-import pool from "../config/dbconf.js";
+import pool from "../config/db.js";
 
 export const crearConsulta = async (req, res) => {
   const { cita_id, diagnostico, receta, usuario_reg } = req.body;

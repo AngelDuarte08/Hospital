@@ -30,7 +30,7 @@
 ⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
 */
 
-import pool from "../config/dbconf.js";
+import pool from "../config/db.js";
 
 export const crearPaciente = async (req, res) => {
   const { dni, nombre, apellido, telefono, edad } = req.body;

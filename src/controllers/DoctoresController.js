@@ -30,7 +30,7 @@
 ⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
 */
 
-import pool from "../config/dbconf.js";
+import pool from "../config/db.js";
 
 export const crearDoctores = async (req, res) => {
   // usuario_reg no se inserta acá por defecto porque la columna no existe en la tabla;
