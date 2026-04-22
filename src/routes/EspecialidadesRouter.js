@@ -30,14 +30,15 @@
 ⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
 */
 
-import express from "express";
-import {
+const express = require("express");
+const {
   crearEspecialidad,
   obtenerEspecialidades,
-} from "../controllers/EspecialidadesController.js";
+} = require("../controllers/EspecialidadesController.js");
+
 const router = express.Router();
 
 router.post("/", crearEspecialidad);
 router.get("/", obtenerEspecialidades);
 
-export default router;
+module.exports = router;

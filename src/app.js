@@ -28,30 +28,6 @@ if (IS_PROD) {
     }),
   );
 }
-//Mendozainc Routes
-const rolesRoutes = require("./routes/RolRoute.js");
-const ConsultoriosRoutes = require("./routes/ConsultoriosRoutes.js");
-const EspecialidadesRoutes = require("./routes/EspecialidadesRouter.js");
-const PacientesRoutes = require("./routes/PacientesRoutes.js");
-const UsuariosRoutes = require("./routes/UsuariosRoutes.js");
-const DoctoresRoutes = require("./routes/DoctoresRoutes.js");
-const UrgenciasRoutes = require("./routes/UrgenciasRoutes.js");
-const ConsultasRoutes = require("./routes/ConsultasRoutes.js");
-const CitasRoutes = require("./routes/CitasRoutes.js");
-const AdminRoutes = require("./routes/AdminRoutes.js");
-const AuthRoutes = require("./routes/AuthRoutes.js");
-
-app.use("/auth", AuthRoutes);
-app.use("/admin/roles", rolesRoutes);
-app.use("/admin/consultorios", ConsultoriosRoutes);
-app.use("/admin/especialidades", EspecialidadesRoutes);
-app.use("/admin/pacientes", PacientesRoutes);
-app.use("/admin/usuarios", UsuariosRoutes);
-app.use("/admin/doctores", DoctoresRoutes);
-app.use("/admin/urgencias", UrgenciasRoutes);
-app.use("/admin/consultas", ConsultasRoutes);
-app.use("/admin/citas", CitasRoutes);
-app.use("/admin", AdminRoutes);
 
 app.use(
   cors({

@@ -30,11 +30,12 @@
 ⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
 */
 
-import express from "express";
+const express = require("express");
 const router = express.Router();
-import { crearRol, obtenerRoles } from "../controllers/RolController.js"; // Ajusta según tu controlador
+
+const { crearRol, obtenerRoles } = require("../controllers/RolController.js");
 
 router.post("/", crearRol);
 router.get("/", obtenerRoles);
 
-export default router;
+module.exports = router;

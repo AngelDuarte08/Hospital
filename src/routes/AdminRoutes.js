@@ -30,11 +30,11 @@
 ⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
 */
 
-import express from "express";
-import { getStats } from "../controllers/AdminController.js";
+const express = require("express");
+const { getStats } = require("../controllers/AdminController.js");
 
 const router = express.Router();
 
 router.get("/stats", getStats);
 
-export default router;
+module.exports = router;

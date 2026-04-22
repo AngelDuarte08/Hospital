@@ -30,12 +30,12 @@
 ⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
 */
 
-import express from "express";
-import { crearCita, obtenerCitas } from "../controllers/CitasController.js";
+const express = require("express");
+const { crearCita, obtenerCitas } = require("../controllers/CitasController.js");
 
 const router = express.Router();
 
 router.post("/", crearCita);
 router.get("/", obtenerCitas);
 
-export default router;
+module.exports = router;

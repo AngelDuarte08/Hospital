@@ -30,18 +30,18 @@
 ⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
 */
 
-import express from "express";
-import {
+const express = require("express");
+const {
   crearUrgencia,
   obtenerUrgencias,
-} from "../controllers/UrgenciasController.js";
+} = require("../controllers/UrgenciasController.js");
 
 const router = express.Router();
 
-// Obtener todas las urgencias (lista / vista)
+// Obtener todas las urgencias
 router.get("/", obtenerUrgencias);
 
 // Crear nueva urgencia
 router.post("/", crearUrgencia);
 
-export default router;
+module.exports = router;
