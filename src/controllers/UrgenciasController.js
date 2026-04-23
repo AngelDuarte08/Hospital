@@ -1,41 +1,8 @@
-/*
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣶⣿⣿⣿⣶⣦⣄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠿⢿⣿⣿⣿⠿⠛⠻⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⣤⡄⢻⣿⡏⢠⣶⡄⢸⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣇⢿⣷⣾⢻⣷⢾⣿⡇⣸⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⣿⡋⠀⠁⠀⠈⠀⢈⣭⢻⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣟⢦⣤⣤⡤⠖⣋⣥⣾⣿⣿⣿⣿⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⡿⣿⣦⣥⣶⣿⠿⠛⢹⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⠁⠀⠉⠉⠉⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣦
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⡿⠿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⡿⠋⠀⠀⠘⢿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠇⠻⣿⣿⡿⠟⠋⠉⢿⣧
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠋⠉⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣦⣄⣀⠀⠀⢀⣀⣤⣴⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣼⡿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢀⣠⣶⠿⠛⠉
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⠿⠷⣶⣦⣄⣀⠀⠀⠀⣠⣿⠿⠟⠛⠛⠛⠛⠛⠛⠛⢻⣿⡀⠀⠀⠀⢀⣴⡿⠋⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠿⠿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣶⣶⡾⠿⠋
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⣦⣤⡄⠀⠀⣦⣤⢀⣤⣤⣤⣤⠀⣦⣤⡀⢰⣤⣴⢰⣤⣤⣤⣤⡀⠀⣠⣤⣶⣤⡀⢰⣤⣤⣤⣤⠀⢰⣤⣴⡀⠀⢰⣤⣴⢠⣤⣄⠀⣦⣤⡄⢀⣤⣴⣶⣤
-⢸⡿⣷⠀⣼⢿⡇⠀⢸⣇⣀⣉⠁⢸⡿⣷⡀⣿⡇⠀⣿⡇⠀⢹⣿⢰⣿⠁⠀⠹⣿⠈⠁⣰⡿⠁⠀⢠⣿⢹⣧⠀⠀⣿⡇⠀⣿⢿⣦⢸⣿⠀⣾⡏⠀⠘⠛
-⢸⡇⢹⣷⡟⢸⣿⠀⢸⡏⠉⣍⡀⢸⡇⠙⣿⣿⡇⠀⣿⡇⠀⣸⡿⠸⣿⡀⠀⢰⣿⢀⣼⡟⠁⣄⠀⣾⠷⠶⣿⡆⠀⣿⡇⠀⣿⠀⠻⣿⣿⠀⣿⣇⠀⠀⣤
-⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
-*/
+const { pool } = require("../config/db");
 
-import pool from "../config/db.js";
-
-export const crearUrgencia = async (req, res) => {
+const crearUrgencia = async (req, res) => {
   const { id_paciente, id_doctor, observacion_p, atendido } = req.body;
 
-  // Validación básica de campos obligatorios
   if (!id_paciente || !id_doctor) {
     return res.status(400).json({
       error: "Faltan datos: id_paciente e id_doctor son obligatorios",
@@ -44,7 +11,6 @@ export const crearUrgencia = async (req, res) => {
   }
 
   try {
-    // Normalizar valores opcionales
     const observacion = observacion_p ?? null;
     const atendidoBool =
       atendido === undefined || atendido === null ? false : Boolean(atendido);
@@ -66,10 +32,8 @@ export const crearUrgencia = async (req, res) => {
   }
 };
 
-export const obtenerUrgencias = async (req, res) => {
+const obtenerUrgencias = async (req, res) => {
   try {
-    // Traemos las urgencias y, cuando sea posible, datos legibles del paciente.
-    // No hacemos JOIN con la vista de doctores para evitar dependencias a columnas que no existen.
     const result = await pool.query(
       `SELECT
          u.id_urgencias,
@@ -97,7 +61,4 @@ export const obtenerUrgencias = async (req, res) => {
   }
 };
 
-export default {
-  crearUrgencia,
-  obtenerUrgencias,
-};
+module.exports = { crearUrgencia, obtenerUrgencias };

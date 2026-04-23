@@ -1,41 +1,8 @@
-/*
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣶⣿⣿⣿⣶⣦⣄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠿⢿⣿⣿⣿⠿⠛⠻⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⣤⡄⢻⣿⡏⢠⣶⡄⢸⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣇⢿⣷⣾⢻⣷⢾⣿⡇⣸⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⣿⡋⠀⠁⠀⠈⠀⢈⣭⢻⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣟⢦⣤⣤⡤⠖⣋⣥⣾⣿⣿⣿⣿⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⡿⣿⣦⣥⣶⣿⠿⠛⢹⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⠁⠀⠉⠉⠉⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣦
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⡿⠿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⡿⠋⠀⠀⠘⢿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠇⠻⣿⣿⡿⠟⠋⠉⢿⣧
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠋⠉⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣦⣄⣀⠀⠀⢀⣀⣤⣴⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣼⡿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢀⣠⣶⠿⠛⠉
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⠿⠷⣶⣦⣄⣀⠀⠀⠀⣠⣿⠿⠟⠛⠛⠛⠛⠛⠛⠛⢻⣿⡀⠀⠀⠀⢀⣴⡿⠋⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠿⠿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣶⣶⡾⠿⠋
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⣦⣤⡄⠀⠀⣦⣤⢀⣤⣤⣤⣤⠀⣦⣤⡀⢰⣤⣴⢰⣤⣤⣤⣤⡀⠀⣠⣤⣶⣤⡀⢰⣤⣤⣤⣤⠀⢰⣤⣴⡀⠀⢰⣤⣴⢠⣤⣄⠀⣦⣤⡄⢀⣤⣴⣶⣤
-⢸⡿⣷⠀⣼⢿⡇⠀⢸⣇⣀⣉⠁⢸⡿⣷⡀⣿⡇⠀⣿⡇⠀⢹⣿⢰⣿⠁⠀⠹⣿⠈⠁⣰⡿⠁⠀⢠⣿⢹⣧⠀⠀⣿⡇⠀⣿⢿⣦⢸⣿⠀⣾⡏⠀⠘⠛
-⢸⡇⢹⣷⡟⢸⣿⠀⢸⡏⠉⣍⡀⢸⡇⠙⣿⣿⡇⠀⣿⡇⠀⣸⡿⠸⣿⡀⠀⢰⣿⢀⣼⡟⠁⣄⠀⣾⠷⠶⣿⡆⠀⣿⡇⠀⣿⠀⠻⣿⣿⠀⣿⣇⠀⠀⣤
-⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
-*/
+const { pool } = require("../config/db");
 
-import pool from "../config/db.js";
-
-export const crearPaciente = async (req, res) => {
+const crearPaciente = async (req, res) => {
   const { dni, nombre, apellido, telefono, edad } = req.body;
 
-  // Validación básica de campos obligatorios
   if (!dni || !nombre || !apellido) {
     return res.status(400).json({
       error: "Faltan datos obligatorios: dni, nombre y apellido son requeridos",
@@ -57,7 +24,6 @@ export const crearPaciente = async (req, res) => {
     });
   } catch (error) {
     console.error("Error al crear paciente:", error);
-    // Si hay una violación de restricción, devolver un mensaje más claro
     if (error.code === "23505") {
       return res.status(409).json({
         mensaje: "Registro duplicado",
@@ -68,7 +34,7 @@ export const crearPaciente = async (req, res) => {
   }
 };
 
-export const obtenerPacientes = async (req, res) => {
+const obtenerPacientes = async (req, res) => {
   try {
     const result = await pool.query(
       "SELECT id, dni, nombre, apellido, telefono, edad FROM pacientes ORDER BY id ASC",
@@ -82,7 +48,4 @@ export const obtenerPacientes = async (req, res) => {
   }
 };
 
-export default {
-  crearPaciente,
-  obtenerPacientes,
-};
+module.exports = { crearPaciente, obtenerPacientes };

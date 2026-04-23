@@ -1,40 +1,6 @@
-/*
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣶⣿⣿⣿⣶⣦⣄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠿⢿⣿⣿⣿⠿⠛⠻⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⣤⡄⢻⣿⡏⢠⣶⡄⢸⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣇⢿⣷⣾⢻⣷⢾⣿⡇⣸⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⣿⡋⠀⠁⠀⠈⠀⢈⣭⢻⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣟⢦⣤⣤⡤⠖⣋⣥⣾⣿⣿⣿⣿⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⡿⣿⣦⣥⣶⣿⠿⠛⢹⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⠁⠀⠉⠉⠉⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣦
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣷⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⡿⠿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⡿⠋⠀⠀⠘⢿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠇⠻⣿⣿⡿⠟⠋⠉⢿⣧
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠋⠉⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣦⣄⣀⠀⠀⢀⣀⣤⣴⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣼⡿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢀⣠⣶⠿⠛⠉
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⠿⠷⣶⣦⣄⣀⠀⠀⠀⣠⣿⠿⠟⠛⠛⠛⠛⠛⠛⠛⢻⣿⡀⠀⠀⠀⢀⣴⡿⠋⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠿⠿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣶⣶⡾⠿⠋
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⣦⣤⡄⠀⠀⣦⣤⢀⣤⣤⣤⣤⠀⣦⣤⡀⢰⣤⣴⢰⣤⣤⣤⣤⡀⠀⣠⣤⣶⣤⡀⢰⣤⣤⣤⣤⠀⢰⣤⣴⡀⠀⢰⣤⣴⢠⣤⣄⠀⣦⣤⡄⢀⣤⣴⣶⣤
-⢸⡿⣷⠀⣼⢿⡇⠀⢸⣇⣀⣉⠁⢸⡿⣷⡀⣿⡇⠀⣿⡇⠀⢹⣿⢰⣿⠁⠀⠹⣿⠈⠁⣰⡿⠁⠀⢠⣿⢹⣧⠀⠀⣿⡇⠀⣿⢿⣦⢸⣿⠀⣾⡏⠀⠘⠛
-⢸⡇⢹⣷⡟⢸⣿⠀⢸⡏⠉⣍⡀⢸⡇⠙⣿⣿⡇⠀⣿⡇⠀⣸⡿⠸⣿⡀⠀⢰⣿⢀⣼⡟⠁⣄⠀⣾⠷⠶⣿⡆⠀⣿⡇⠀⣿⠀⠻⣿⣿⠀⣿⣇⠀⠀⣤
-⠿⠷⠆⠉⠁⠾⠿⠶⠿⠿⠿⠿⠇⠿⠷⠆⠈⠿⠇⠰⠿⠿⠿⠛⠁⠀⠙⠿⠿⠟⠃⠸⠿⠿⠿⠿⠾⠿⠆⠀⠾⠿⠶⠿⠷⠰⠿⠷⠀⠹⠿⠀⠈⠻⠷⠾⠟
-*/
+const { pool } = require("../config/db");
 
-import pool from "../config/db.js";
-
-export const crearDoctores = async (req, res) => {
-  // usuario_reg no se inserta acá por defecto porque la columna no existe en la tabla;
-  // recibimos los campos que sí queremos permitir: usuario_id, especialidad_id y opcionalmente n_colegiado
+const crearDoctores = async (req, res) => {
   const { usuario_id, especialidad_id, n_colegiado } = req.body;
 
   if (!usuario_id || !especialidad_id) {
@@ -45,8 +11,6 @@ export const crearDoctores = async (req, res) => {
   }
 
   try {
-    // Construimos la sentencia INSERT dinámicamente para incluir solo columnas que existan en la tabla
-    // y para evitar intentar insertar columnas inexistentes (como usuario_reg en este caso).
     let query = "INSERT INTO doctores (usuario_id, especialidad_id";
     let placeholders = "VALUES ($1, $2";
     const params = [usuario_id, especialidad_id];
@@ -75,7 +39,7 @@ export const crearDoctores = async (req, res) => {
   }
 };
 
-export const obtenerDoctores = async (req, res) => {
+const obtenerDoctores = async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM doctores");
     res.status(200).json(result.rows);
@@ -87,3 +51,5 @@ export const obtenerDoctores = async (req, res) => {
     });
   }
 };
+
+module.exports = { crearDoctores, obtenerDoctores };
