@@ -48,7 +48,7 @@ router.use("/admin/urgencias", urgenciasRoutes);
 router.use("/admin/consultas", consultasRoutes);
 router.use("/admin/citas", citasRoutes);
 router.use("/admin/stats", statsRoutes);
-router.use("/admin", adminRoutes);
+router.use("/admin/auth", adminRoutes);
 router.use("/auth-admin", authAdminRoutes);
 
 module.exports = router;
